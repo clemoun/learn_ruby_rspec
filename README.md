@@ -1,3 +1,5 @@
+Exercices effectués par Thierry Delongueville et Clément Baldy
+
 Test First Ruby -- RSpec 3 Edition
 ==========
 
