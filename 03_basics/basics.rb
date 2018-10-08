@@ -1,20 +1,13 @@
 # write your code here
 def who_is_bigger(a,b,c)
-	unless (a && b && c)
+	if !(a && b && c)
 		return "nil detected"
+	elsif a>=b && a>=c
+		return "a is bigger"
+	elsif b>=a && b>=c
+		return "b is bigger"
 	end
-	if b>a
-		if c>b
-			return "c is bigger"
-		else
-			return "b is bigger"
-		end
-	else
-		if c>a
-			return "c is bigger"
-		end
-	end
-	return "a is bigger"
+	return "c is bigger"
 end
 
 def reverse_upcase_noLTA(string)
@@ -24,6 +17,7 @@ def reverse_upcase_noLTA(string)
 		string[string =~ /(L|T|A)/]=""
 	end
 	return string
+	# string.reverse.upcase.delete("LTA")
 end
 
 def array_42(array)
@@ -31,11 +25,8 @@ def array_42(array)
 	return false
 end
 
-def magic_array(array)
-	array.flatten!
-	array.sort!
-	array.delete_if{|n| n%3==0}
-	array.uniq!
-	array.each_index {|i| array[i] *=2}
+def magic_array(a)
+	a.flatten.sort.uniq.map{|n|n*=2}.delete_if{|n|n%3==0}
 end
+
 
